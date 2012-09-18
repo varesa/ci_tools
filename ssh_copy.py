@@ -9,7 +9,7 @@ from sys import argv, exit
 from lxml import etree
 import re
 from os.path import exists, isdir, join
-from subprocess import call
+from subprocess import call, PIPE, Popen
 
 ## Check argument validity
 
