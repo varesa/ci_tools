@@ -47,7 +47,7 @@ artifact = pomroot.findtext(nms + "artifactId")
 
 ## Find the file to be copied
 
-latestName="{artifactId}-{version}.jar".format(artifactId=artifact, version=version)}
+latestName="{artifactId}-{version}.jar".format(artifactId=artifact, version=version)
 latestPath=join(workspace,"target", latestName)
 
 if not exists(latestPath) or isDir(latestPath):
