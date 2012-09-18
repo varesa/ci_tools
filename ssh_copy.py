@@ -64,7 +64,8 @@ print("\nStarting rsync")
 
 p = Popen(["rsync", 
 	"\"{source}\"".format(source=latestPath),
-	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)],stdout=PIPE)
+	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)],
+	stdout=PIPE, stderr=PIPE)
 out, err = p.communicate()
 print(out)
 print(err)
