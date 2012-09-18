@@ -60,6 +60,7 @@ user = "mc"
 host = "192.168.0.32"
 dir  = "/mc/test/plugins/"
 
-call(["rsync", 
-	"\"{source}\"".format(source=latestPath),
-	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)])
+
+#call(["rsync", 
+#	"\"{source}\"".format(source=latestPath),
+#	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)])
