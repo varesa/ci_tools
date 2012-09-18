@@ -20,10 +20,10 @@ except IndexError:
 	exit(-1)
 
 if not exists(workspace) or not isdir(workspace):
-	print("The location '{workspace}' does not exist\n".format(workspace=workspace))
+	print("The location '{workspace}' does not exist".format(workspace=workspace))
 	exit(-1)
 
-print("Using workspace: '{workspace}'\n".format(workspace=workspace))
+print("Using workspace: '{workspace}'".format(workspace=workspace))
 
 pomfile = join(workspace, 'pom.xml')
 
@@ -31,7 +31,7 @@ if not exists(pomfile) or isdir(pomfile):
 	print("The pomfile '{pomfile}' does not exist\n".format(pomfile=pomfile))
 	exit(-1)
 
-print("Using pomfile {pomfile}\n".format(pomfile=pomfile))
+print("Using pomfile {pomfile}".format(pomfile=pomfile))
 
 ## PARSE POM
 
@@ -51,15 +51,16 @@ latestName="{artifactId}-{version}.jar".format(artifactId=artifact, version=vers
 latestPath=join(workspace,"target", latestName)
 
 if not exists(latestPath) or isdir(latestPath):
-	print("The jar-file '{file}' does not exist".format(file=latestPath))
+	print("The jar-file '{file}' does not exist\n".format(file=latestPath))
 	exit(-1)
 
-print("File to be copied: '{file}'".format(file=latestPath))
+print("File to be copied: '{file}'\n".format(file=latestPath))
 
 user = "mc"
 host = "192.168.0.32"
 dir  = "/mc/test/plugins/"
 
+print("\nStarting rsync")
 
 #call(["rsync", 
 #	"\"{source}\"".format(source=latestPath),
