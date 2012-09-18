@@ -1,4 +1,4 @@
-#!/nib/env python
+#!/bin/env python
 #
 # ssh_copy.py:
 # A script to copy the newest artifact ( from jenkins CI ) to a remote server
