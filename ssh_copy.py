@@ -29,3 +29,17 @@ if not exists(pomfile) or isdir(pomfile):
 	exit(-1)
 
 print("Using pomfile {pomfile}\n".format(pomfile=pomfile))
+
+## PARSE POM
+
+pom = etree.parse(pomfile)
+pomroot = pom.getroot()
+
+roottag = pomroot.tag
+nms = re.match("({.*})", roottag).group()
+
+#print(etree.tostring(pomroot))
+
+version  = pomroot.findtext(nms + "version")
+groupid  = pomroot.findtext(nms + "groupId")
+artifact = pomroot.findtext(nms + "artifactId")
