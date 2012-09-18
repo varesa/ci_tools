@@ -38,8 +38,18 @@ pomroot = pom.getroot()
 roottag = pomroot.tag
 nms = re.match("({.*})", roottag).group()
 
-#print(etree.tostring(pomroot))
-
 version  = pomroot.findtext(nms + "version")
 groupid  = pomroot.findtext(nms + "groupId")
 artifact = pomroot.findtext(nms + "artifactId")
+
+## Find the file to be copied
+
+latestName="{artifactId}-{version}.jar".format(artifactId=artifact, version=version)}
+latestPath=join(workspace,"target", latestName)
+
+if not exists(latestPath) or isDir(latestPath):
+	print("The jar-file '{file}' does not exist".format(file=latestPath))
+	exit(-1)
+
+print("File to be copied: '{file}'".format(file=latestPath))
+
