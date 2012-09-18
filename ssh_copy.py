@@ -58,7 +58,7 @@ print("File to be copied: '{file}'".format(file=latestPath))
 
 user = "mc"
 host = "192.168.0.32"
-dir  = "/mc/test/plugins/
+dir  = "/mc/test/plugins/"
 
 call(["rsync", 
 	"\"{source}\"".format(source=latestPath),
