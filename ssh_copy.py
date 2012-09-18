@@ -50,7 +50,7 @@ artifact = pomroot.findtext(nms + "artifactId")
 latestName="{artifactId}-{version}.jar".format(artifactId=artifact, version=version)
 latestPath=join(workspace,"target", latestName)
 
-if not exists(latestPath) or isDir(latestPath):
+if not exists(latestPath) or isdir(latestPath):
 	print("The jar-file '{file}' does not exist".format(file=latestPath))
 	exit(-1)
 
