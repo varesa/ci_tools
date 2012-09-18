@@ -1,3 +1,5 @@
+#!/nib/env python
+#
 # ssh_copy.py:
 # A script to copy the newest artifact ( from jenkins CI ) to a remote server
 #  - the script excepts the build workspace to be passed as the first argument
