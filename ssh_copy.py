@@ -7,6 +7,7 @@ from sys import argv, exit
 from lxml import etree
 import re
 from os.path import exists, isdir, join
+from subprocess import call
 
 ## Check argument validity
 
@@ -53,3 +54,10 @@ if not exists(latestPath) or isDir(latestPath):
 
 print("File to be copied: '{file}'".format(file=latestPath))
 
+user = "mc"
+host = "192.168.0.32"
+dir  = "/mc/test/plugins/
+
+call(["rsync", 
+	"\"{source}\"".format(source=latestPath),
+	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)])
