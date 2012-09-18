@@ -62,6 +62,9 @@ dir  = "/mc/test/plugins/"
 
 print("\nStarting rsync")
 
-#call(["rsync", 
-#	"\"{source}\"".format(source=latestPath),
-#	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)])
+p = Popen(["rsync", 
+	"\"{source}\"".format(source=latestPath),
+	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)],stdout=PIPE)
+out, err = p.communicate()
+print(out)
+print(err)
