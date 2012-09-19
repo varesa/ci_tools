@@ -64,7 +64,7 @@ print("\nStarting rsync")
 
 print(' '.join(["rsync", 
 	"\"{source}\"".format(source=latestPath),
-	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)])
+	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)]))
 
 
 p = Popen(["rsync", 
