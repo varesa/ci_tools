@@ -66,6 +66,10 @@ print(' '.join(["rsync",
 	"\"{source}\"".format(source=latestPath),
 	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)]))
 
+p = Popen(['whoami'])
+out, err = p.communicate()
+print(out)
+print(err)
 
 p = Popen(["rsync", 
 	"\"{source}\"".format(source=latestPath),
