@@ -62,9 +62,7 @@ dir  = "/mc/test/plugins/"
 
 print("\nStarting rsync")
 
-print(' '.join(["rsync", 
-	"\"{source}\"".format(source=latestPath),
-	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)]))
+print(' '.join(["rsync \"{source}\" \"{user}@{host}:{dir}\"".format(source=latestPath, user=user, host=host, dir=dir)]))
 
 p = Popen(["whoami"])
 out, err = p.communicate()
