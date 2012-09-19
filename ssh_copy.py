@@ -62,7 +62,8 @@ dir  = join("/mc/test/plugins/", artifact+".jar")
 
 print("\nStarting rsync")
 
-p = Popen("rsync \"{source}\" \"{user}@{host}:{dir}\"".format(source=latestPath, user=user, host=host, dir=dir), stdout=PIPE, stderr=PIPE, shell=True)
-out, err = p.communicate()
+p = Popen(["rsync", latestPath, "{user}@{host}:{dir}".format(user=user, host=host, dir=dir)],
+           stdout=PIPE, stderr=PIPE, shell=True)
+#out, err = p.communicate()
 
 print("Rsync file transfer complete")
