@@ -58,7 +58,7 @@ print("File to be copied: '{file}'\n".format(file=latestPath))
 
 user = "mc"
 host = "192.168.0.32"
-dir  = "/mc/test/plugins/"
+dir  = join("/mc/test/plugins/", artifact+".jar")
 
 print("\nStarting rsync")
 
@@ -77,5 +77,5 @@ print(err)
 
 p = Popen("rsync \"{source}\" \"{user}@{host}:{dir}\"".format(source=latestPath, user=user, host=host, dir=dir), stdout=PIPE, stderr=PIPE, shell=True)
 out, err = p.communicate()
-print(out)
-print(err)
+
+print("Rsync file transfer complete")
