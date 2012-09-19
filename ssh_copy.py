@@ -58,7 +58,7 @@ print("File to be copied: '{file}'\n".format(file=latestPath))
 
 user = "mc"
 host = "192.168.0.32"
-dir  = "/mc/test/plugins/"
+dir  = join("/mc/test/plugins/", artifact+".jar")
 
 print("\nStarting rsync")
 
