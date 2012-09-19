@@ -62,19 +62,6 @@ dir  = join("/mc/test/plugins/", artifact+".jar")
 
 print("\nStarting rsync")
 
-print("rsync \"{source}\" \"{user}@{host}:{dir}\"".format(source=latestPath, user=user, host=host, dir=dir))
-
-p = Popen(["whoami"])
-out, err = p.communicate()
-print(out)
-print(err)
-
-
-#p = Popen(['rsync', 
-#	'\"{source}\"'.format(source=latestPath),
-#	'\"{user}@{host}:{dir}\"'.format(user=user, host=host, dir=dir)],
-#	stdout=PIPE, stderr=PIPE, shell=True)
-
 p = Popen("rsync \"{source}\" \"{user}@{host}:{dir}\"".format(source=latestPath, user=user, host=host, dir=dir), stdout=PIPE, stderr=PIPE, shell=True)
 out, err = p.communicate()
 
