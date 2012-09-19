@@ -69,9 +69,9 @@ out, err = p.communicate()
 print(out)
 print(err)
 
-p = Popen(["rsync", 
-	"\"{source}\"".format(source=latestPath),
-	"\"{user}@{host}:{dir}\"".format(user=user, host=host, dir=dir)],
+p = Popen(['rsync', 
+	'\"{source}\"'.format(source=latestPath),
+	'\"{user}@{host}:{dir}\"'.format(user=user, host=host, dir=dir)],
 	stdout=PIPE, stderr=PIPE, shell=True)
 out, err = p.communicate()
 print(out)
