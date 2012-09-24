@@ -62,7 +62,7 @@ dir  = join("/mc/test/plugins/", artifact+".jar")
 
 print("\nStarting rsync")
 
-print("Cmd is: " + ' '.join("rsync", latestPath, "{user}@{host}:{dir}".format(user=user, host=host, dir=dir)))
+print("Cmd is: " + ' '.join(["rsync", latestPath, "{user}@{host}:{dir}".format(user=user, host=host, dir=dir)]))
 p = Popen(["rsync", latestPath, "{user}@{host}:{dir}".format(user=user, host=host, dir=dir)],
            stdout=PIPE, stderr=PIPE, shell=True)
 out, err = p.communicate()
