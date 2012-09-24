@@ -64,6 +64,8 @@ print("\nStarting rsync")
 
 p = Popen(["rsync", latestPath, "{user}@{host}:{dir}".format(user=user, host=host, dir=dir)],
            stdout=PIPE, stderr=PIPE, shell=True)
-#out, err = p.communicate()
+out, err = p.communicate()
+print("\nRsync stdout:\n" + out)
+print("\nRsync stderr:\n" + err)
 
 print("Rsync file transfer complete")
