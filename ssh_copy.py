@@ -66,8 +66,9 @@ print("Cmd is: " + ' '.join(["rsync", latestPath, "{user}@{host}:{dir}".format(u
 
 print("Popen([\"" + "rsync" + "\", \"" + latestPath + "\", \"" + "{user}@{host}:{dir}".format(user=user, host=host, dir=dir) + "\"])")
 
+
 p = Popen(["rsync", latestPath, "{user}@{host}:{dir}".format(user=user, host=host, dir=dir)],
-           stdout=PIPE, stderr=PIPE, shell=True)
+           stdout=PIPE, stderr=PIPE)
 out, err = p.communicate()
 print("\nRsync stdout:\n" + out)
 print("\nRsync stderr:\n" + err)
